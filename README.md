@@ -1,4 +1,32 @@
 # FastDiagPEvaluation_copy
+
+This repository provides two implementations of FastDiagP.
+
+## Table of Contents
+
+- [Repository structure](#repository-structure)
+- [Evaluation process](#evaluation-process)
+- [How to reproduce the experiment](#how-to-reproduce-the-experiment)
+  - [Build a Docker image](#build-a-docker-image)
+  - [Use pre-build Java applications](#use-pre-build-java-applications)
+  - [Build apps by yourself](#build-apps-by-yourself)
+
+## Repository structure
+
+| *folder*         | *description*                                                                           |
+|------------------|-----------------------------------------------------------------------------------------|
+| ./data/kb        | stores the *Linux-2.6.33.3* feature model, which is used in some unit tests |
+| ./data           | s, a test suite, and scenarios                     |
+| ./data/testsuite | stores a test suite of the original *Linux-2.6.33.3* feature model                      |
+| ./data/scenarios | contains scenarios selected to evaluate the **WipeOutR_T** algorithm                    |
+| ./data/results   | evaluation results published in the paper                                               |
+| ./docs           | guides of *jar* files                                                                   |
+| ./results        | stores the results                                                       |
+| ./src            | source code                                                                             |
+| ./shell          | bash scripts to execute the evaluations                                                 |
+| ./docker         | a bash script and a copy of configuration files, which are used to build a Docker image |
+| Dockerfile       | Dockerfile to build the Docker image                                                    |
+| settings.xml     | settings of the GitHub Maven repository                                                 |
  
 > **JDK requirement:** Eclipse Temurin 17.0.2
 
