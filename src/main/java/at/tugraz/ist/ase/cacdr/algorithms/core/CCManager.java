@@ -16,7 +16,13 @@ import java.util.concurrent.Semaphore;
 import static at.tugraz.ist.ase.eval.PerformanceEvaluator.incrementCounter;
 
 /**
- * Manages a list of pre-generated {@link ChocoConsistencyChecker}s
+ * Manages a list of pre-generated {@link ChocoConsistencyChecker}s.
+ * In the parallel scheme, when a worker need to check the consistency of a constraint set,
+ * it will ask CCManager to get a free ChocoConsistencyChecker that is not being used by other workers.
+ *
+ * Each checker is an instance of {@link ChocoConsistencyChecker}, which provides a set of methods
+ * to check the consistency of a constraint set. Since Choco Solver is not thread-safe, we need to
+ * create a new ChocoConsistencyChecker for each thread.
  */
 @Slf4j
 public class CCManager {
@@ -25,8 +31,8 @@ public class CCManager {
 
 //    private final CDRModel model;
 
-    private final ConcurrentLinkedQueue<ChocoConsistencyChecker> checkers;
-    private final ConcurrentMap<Integer, Boolean> usingCheckers;
+    private final ConcurrentLinkedQueue<ChocoConsistencyChecker> checkers; // list of ChocoConsistencyCheckers
+    private final ConcurrentMap<Integer, Boolean> usingCheckers; // control the usage of checkers, false - free, true - used
 
     private final Semaphore manager_semaphore;
     private final Semaphore checker_semaphore;
@@ -42,9 +48,9 @@ public class CCManager {
         for (int i = 0; i < numCheckers * 2; i++) {
             Thread t = new Thread(() -> {
                 try {
-                    CDRModel copy = (CDRModel) diagModel.clone();
+                    CDRModel copy = (CDRModel) diagModel.clone(); // clone the model
 
-                    ChocoConsistencyChecker checker = new ChocoConsistencyChecker(copy);
+                    ChocoConsistencyChecker checker = new ChocoConsistencyChecker(copy); // create a new checker
 
                     checkers.add(checker);
                     usingCheckers.put(checker.hashCode(), false); // initially, all checkers are not used
@@ -65,7 +71,10 @@ public class CCManager {
             }
         }
 
-        manager_semaphore = new Semaphore(numCheckers); // already try fair=true
+        // limit the number of workers operating at the same time
+        // numCheckers == size of checkerPool
+        manager_semaphore = new Semaphore(numCheckers);
+
         checker_semaphore = new Semaphore(1);
     }
 
@@ -106,6 +115,7 @@ public class CCManager {
 
             incrementCounter(COUNTER_GET_CHECKER);
         } else {
+            // TODO - maybe create one more checker?
             log.error("{}(CCManager) no free checker found", LoggerUtils.tab());
         }
 

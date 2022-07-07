@@ -37,13 +37,19 @@ public class LookupTableV6 {
         return result;
     }
 
+    /**
+     * Returns the result of the consistency check for the given constraint set.
+     * Usually called after checking the existence of the consistency check using the contains function.
+     * @param hashCode - the hashcode of the constraint set
+     */
     public Boolean getConsistency(int hashCode) throws ExecutionException, InterruptedException {
         start(TIMER_LOOKUP_GET);
-        ConsistencyCheckResultV6 result = lookupTable.get(hashCode);
+        ConsistencyCheckResultV6 result = lookupTable.get(hashCode); // find the ConsistencyCheckResult for the given constraint set
         Boolean consistency = null;
+        // if the worker for the ConsistencyCheck is done, return the consistency
         if (result.getWorker() == null || result.getWorker().isDone()) {
             consistency = result.isConsistent();
-        } else {
+        } else { // if the worker for the ConsistencyCheck is not done, wait for it to finish
             try {
                 consistency = result.getWorker().get(5, TimeUnit.MILLISECONDS);
             } catch (TimeoutException e) {
@@ -74,6 +80,10 @@ public class LookupTableV6 {
         semaphore.release();
     }
 
+    /**
+     *
+     * @param message
+     */
     public void print(String message) {
         try {
             semaphore.acquire();

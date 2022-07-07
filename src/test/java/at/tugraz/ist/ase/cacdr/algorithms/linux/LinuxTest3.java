@@ -45,7 +45,7 @@ public class LinuxTest3 {
 
     private final int maxLevel = 2;
     private final int iterations = 1;
-    private static final String var_value_combination = "MCP_UCB1200=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=true,FRAMEBUFFER_CONSOLE=true,SERIAL_SUNZILOG=true,FIREWIRE=true,PCI_DEBUG=true,HAVE_DMA_API_DEBUG=true,BACKTRACE_SELF_TEST=true,PHYS_ADDR_T_64BIT=true,INFINIBAND=true,SYSVIPC=true,ASYNC_PQ=true,STRICT_DEVMEM=true,X86_DS=true,HAVE_PERF_EVENTS=true,LOCK_KERNEL=true,SERIAL_SUNSU=true,UIO=true,NLS=true,PCCARD=true,GENERIC_PENDING_IRQ=true,SECURITY_TOMOYO=true,LOCALVERSION=true,X86_ELAN=true,SELECT_MEMORY_MODEL=true,KGDB=true,EZX_PCAP=true,QFMT_V1=true,INIT_ALL_POSSIBLE=true,HT_IRQ=true,DEBUG_PER_CPU_MAPS=true,GENERIC_HARDIRQS_NO__DO_IRQ=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,FW_LOADER=true,FTRACE_NMI_ENTER=true,TWL4030_CORE=true,IOMMU_DEBUG=false,CHR_DEV_OSST=true,X86_HT=false,SERIAL_SAMSUNG_UARTS=true,PDC_CONSOLE=false,SERIAL_SH_SCI=true,MGEODEGX1_alt=true,EFI_VARS=true,ARCH_INLINE_READ_TRYLOCK=true,MAXSMP=true,GENERIC_CMOS_UPDATE=true,GENERIC_TIME=false,DEBUG_PAGEALLOC=false,SERIAL_ICOM=false,SERIAL_S3C2412=false,TRACE_IRQFLAGS_SUPPORT=true,PRINTER=false,INLINE_WRITE_LOCK=false,DLM=false";
+    private static final String user_requirement = "MCP_UCB1200=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=true,FRAMEBUFFER_CONSOLE=true,SERIAL_SUNZILOG=true,FIREWIRE=true,PCI_DEBUG=true,HAVE_DMA_API_DEBUG=true,BACKTRACE_SELF_TEST=true,PHYS_ADDR_T_64BIT=true,INFINIBAND=true,SYSVIPC=true,ASYNC_PQ=true,STRICT_DEVMEM=true,X86_DS=true,HAVE_PERF_EVENTS=true,LOCK_KERNEL=true,SERIAL_SUNSU=true,UIO=true,NLS=true,PCCARD=true,GENERIC_PENDING_IRQ=true,SECURITY_TOMOYO=true,LOCALVERSION=true,X86_ELAN=true,SELECT_MEMORY_MODEL=true,KGDB=true,EZX_PCAP=true,QFMT_V1=true,INIT_ALL_POSSIBLE=true,HT_IRQ=true,DEBUG_PER_CPU_MAPS=true,GENERIC_HARDIRQS_NO__DO_IRQ=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,FW_LOADER=true,FTRACE_NMI_ENTER=true,TWL4030_CORE=true,IOMMU_DEBUG=false,CHR_DEV_OSST=true,X86_HT=false,SERIAL_SAMSUNG_UARTS=true,PDC_CONSOLE=false,SERIAL_SH_SCI=true,MGEODEGX1_alt=true,EFI_VARS=true,ARCH_INLINE_READ_TRYLOCK=true,MAXSMP=true,GENERIC_CMOS_UPDATE=true,GENERIC_TIME=false,DEBUG_PAGEALLOC=false,SERIAL_ICOM=false,SERIAL_S3C2412=false,TRACE_IRQFLAGS_SUPPORT=true,PRINTER=false,INLINE_WRITE_LOCK=false,DLM=false";
 
     @BeforeAll
     public static void setUp() throws FeatureModelParserException {
@@ -56,9 +56,9 @@ public class LinuxTest3 {
         featureModel = parser.parse(file);
 
         UserRequirementBuilder builder = new UserRequirementBuilder();
-        List<UserRequirement> userRequirement = builder.buildUserRequirement(var_value_combination);
+        List<UserRequirement> userRequirement = builder.buildUserRequirement(user_requirement);
         combination = Combination.builder()
-                .combination(var_value_combination)
+                .combination(user_requirement)
                 .userRequirements(userRequirement)
                 .build();
     }

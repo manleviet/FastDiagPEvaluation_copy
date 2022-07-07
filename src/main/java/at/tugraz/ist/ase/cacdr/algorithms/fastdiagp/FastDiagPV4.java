@@ -25,7 +25,7 @@ import static at.tugraz.ist.ase.common.ConstraintUtils.split;
 /**
  * Implementation of FastDiagP algorithm.
  *
- * Variant of V3, nhung khong dung ResultV3
+ * Variant of V3, but doesn't use ConsistencyCheckResultV3
  */
 @Slf4j
 public class FastDiagPV4 extends AbstractFastDiagP {

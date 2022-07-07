@@ -44,7 +44,7 @@ public class LinuxTest1 {
     private final int checkerPoolSize = 6;
     private final int maxLevel = 2;
     private final int iterations = 1;
-    private static final String var_value_combination = "QFMT_V1=true,TELCLOCK=true,SELECT_MEMORY_MODEL=true,PERF_COUNTERS=true,HT_IRQ=false,DEBUG_PAGEALLOC=true,X86_DS=true,SERIAL_SH_SCI=false,ARCH_INLINE_READ_TRYLOCK=true,SECURITY_TOMOYO=false,X86_HT=false,KGDB=false,HAVE_DMA_API_DEBUG=true,MCP_UCB1200=true,EFI_VARS=false,GENERIC_TIME=false,HZ_300_alt=true,NLS=false,UIO=true,FTRACE_NMI_ENTER=false,PRINTER=true,SYSVIPC=false,FW_LOADER=true,PCI_DEBUG=false,X86_PLATFORM_DEVICES=true,SERIAL_S3C2412=true,FIREWIRE=false,STRICT_DEVMEM=false,GENERIC_FIND_FIRST_BIT=true,IOMMU_DEBUG=false,MGEODEGX1_alt=true,DEBUG_PER_CPU_MAPS=true,SERIAL_SAMSUNG_UARTS=true,PHYS_ADDR_T_64BIT=false,HAVE_ARCH_EARLY_PFN_TO_NID=false";
+    private static final String user_requirement = "QFMT_V1=true,TELCLOCK=true,SELECT_MEMORY_MODEL=true,PERF_COUNTERS=true,HT_IRQ=false,DEBUG_PAGEALLOC=true,X86_DS=true,SERIAL_SH_SCI=false,ARCH_INLINE_READ_TRYLOCK=true,SECURITY_TOMOYO=false,X86_HT=false,KGDB=false,HAVE_DMA_API_DEBUG=true,MCP_UCB1200=true,EFI_VARS=false,GENERIC_TIME=false,HZ_300_alt=true,NLS=false,UIO=true,FTRACE_NMI_ENTER=false,PRINTER=true,SYSVIPC=false,FW_LOADER=true,PCI_DEBUG=false,X86_PLATFORM_DEVICES=true,SERIAL_S3C2412=true,FIREWIRE=false,STRICT_DEVMEM=false,GENERIC_FIND_FIRST_BIT=true,IOMMU_DEBUG=false,MGEODEGX1_alt=true,DEBUG_PER_CPU_MAPS=true,SERIAL_SAMSUNG_UARTS=true,PHYS_ADDR_T_64BIT=false,HAVE_ARCH_EARLY_PFN_TO_NID=false";
 
     @BeforeAll
     public static void setUp() throws FeatureModelParserException {
@@ -55,9 +55,9 @@ public class LinuxTest1 {
         featureModel = parser.parse(file);
 
         UserRequirementBuilder builder = new UserRequirementBuilder();
-        List<UserRequirement> userRequirement = builder.buildUserRequirement(var_value_combination);
+        List<UserRequirement> userRequirement = builder.buildUserRequirement(user_requirement);
         combination = Combination.builder()
-                .combination(var_value_combination)
+                .combination(user_requirement)
                 .userRequirements(userRequirement)
                 .build();
     }

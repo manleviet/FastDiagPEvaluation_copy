@@ -45,7 +45,7 @@ public class LinuxTest8 {
 
     private final int maxLevel = 2;
     private final int iterations = 1;
-    private static final String var_value_combination = "REED_SOLOMON_ENC16=true,DS1620=true,FTRACE_NMI_ENTER=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=true,QFMT_V1=true,SERIAL_SH_SCI=true,LOCK_KERNEL=true,OF_MDIO=true,PCCARD=true,KGDB=true,TRACE_IRQFLAGS_SUPPORT=true,HAVE_DMA_API_DEBUG=true,X86_HT=true,GENERIC_CMOS_UPDATE=true,INLINE_SPIN_TRYLOCK=true,PCI_DEBUG=true,INFINIBAND=true,HT_IRQ=true,MCP_UCB1200=true,FW_LOADER=true,BACKTRACE_SELF_TEST=true,DEBUG_PER_CPU_MAPS=true,SERIAL_ATMEL=true,GENERIC_TIME=true,HZ_300_alt=true,X86_ELAN=true,SECURITY_TOMOYO=true,HAVE_PERF_EVENTS=true,SELECT_MEMORY_MODEL=true,BTRFS_FS=true,NLS=true,PHYS_ADDR_T_64BIT=true,PRINTER=true,FIREWIRE=true,SERIAL_SUNSU=true,X86_PLATFORM_DEVICES=true,SERIAL_ICOM=true,STRICT_DEVMEM=true,DLM=true,UIO=true,CHR_DEV_OSST=true,PDC_CONSOLE=true,GENERIC_HARDIRQS_NO__DO_IRQ=true,INLINE_WRITE_LOCK=true,PERF_COUNTERS=true,SYSFS_DEPRECATED_V2=true,ASYNC_PQ=true,FRAMEBUFFER_CONSOLE=true,RCU_TRACE=false,TELCLOCK=true,ARCH_INLINE_READ_TRYLOCK=true,MGEODEGX1_alt=false,SYSVIPC=true,SERIAL_S3C2412=true,DEBUG_PAGEALLOC=true,IOMMU_DEBUG=true,INIT_ALL_POSSIBLE=true,LOCALVERSION=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,SERIAL_SAMSUNG_UARTS=false,SERIAL_SUNZILOG=false,SPLIT_PTLOCK_CPUS=false,ARCH_MAY_HAVE_PC_FDC=true,EFI_VARS=false,GENERIC_ATOMIC64=true";
+    private static final String user_requirement = "REED_SOLOMON_ENC16=true,DS1620=true,FTRACE_NMI_ENTER=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=true,QFMT_V1=true,SERIAL_SH_SCI=true,LOCK_KERNEL=true,OF_MDIO=true,PCCARD=true,KGDB=true,TRACE_IRQFLAGS_SUPPORT=true,HAVE_DMA_API_DEBUG=true,X86_HT=true,GENERIC_CMOS_UPDATE=true,INLINE_SPIN_TRYLOCK=true,PCI_DEBUG=true,INFINIBAND=true,HT_IRQ=true,MCP_UCB1200=true,FW_LOADER=true,BACKTRACE_SELF_TEST=true,DEBUG_PER_CPU_MAPS=true,SERIAL_ATMEL=true,GENERIC_TIME=true,HZ_300_alt=true,X86_ELAN=true,SECURITY_TOMOYO=true,HAVE_PERF_EVENTS=true,SELECT_MEMORY_MODEL=true,BTRFS_FS=true,NLS=true,PHYS_ADDR_T_64BIT=true,PRINTER=true,FIREWIRE=true,SERIAL_SUNSU=true,X86_PLATFORM_DEVICES=true,SERIAL_ICOM=true,STRICT_DEVMEM=true,DLM=true,UIO=true,CHR_DEV_OSST=true,PDC_CONSOLE=true,GENERIC_HARDIRQS_NO__DO_IRQ=true,INLINE_WRITE_LOCK=true,PERF_COUNTERS=true,SYSFS_DEPRECATED_V2=true,ASYNC_PQ=true,FRAMEBUFFER_CONSOLE=true,RCU_TRACE=false,TELCLOCK=true,ARCH_INLINE_READ_TRYLOCK=true,MGEODEGX1_alt=false,SYSVIPC=true,SERIAL_S3C2412=true,DEBUG_PAGEALLOC=true,IOMMU_DEBUG=true,INIT_ALL_POSSIBLE=true,LOCALVERSION=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,SERIAL_SAMSUNG_UARTS=false,SERIAL_SUNZILOG=false,SPLIT_PTLOCK_CPUS=false,ARCH_MAY_HAVE_PC_FDC=true,EFI_VARS=false,GENERIC_ATOMIC64=true";
 
     @BeforeAll
     public static void setUp() throws FeatureModelParserException {
@@ -56,9 +56,9 @@ public class LinuxTest8 {
         featureModel = parser.parse(file);
 
         UserRequirementBuilder builder = new UserRequirementBuilder();
-        List<UserRequirement> userRequirement = builder.buildUserRequirement(var_value_combination);
+        List<UserRequirement> userRequirement = builder.buildUserRequirement(user_requirement);
         combination = Combination.builder()
-                .combination(var_value_combination)
+                .combination(user_requirement)
                 .userRequirements(userRequirement)
                 .build();
     }

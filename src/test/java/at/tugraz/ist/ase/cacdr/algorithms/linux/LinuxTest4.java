@@ -45,7 +45,7 @@ public class LinuxTest4 {
 
     private final int maxLevel = 2;
     private final int iterations = 1;
-    private static final String var_value_combination = "SYSFS_DEPRECATED_V2=true,INIT_ALL_POSSIBLE=true,QFMT_V1=true,SERIAL_SUNSU=true,PERF_COUNTERS=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,PCCARD=true,IOMMU_DEBUG=true,RCU_TRACE=true,FTRACE_NMI_ENTER=true,PCI=true,SPLIT_PTLOCK_CPUS=true,REED_SOLOMON_ENC16=true,INLINE_WRITE_LOCK=true,EZX_PCAP=true,GENERIC_PENDING_IRQ=true,GENERIC_TIME=true,X86_ELAN=true,SERIAL_SH_SCI=true,UIO=true,SYSVIPC=true,LOCALVERSION=true,GENERIC_CMOS_UPDATE=true,STRICT_DEVMEM=true,GENERIC_ATOMIC64=true,DEBUG_PAGEALLOC=true,CHR_DEV_OSST=true,PCI_DEBUG=true,SERIAL_ATMEL=true,NLS=true,ARCH_MAY_HAVE_PC_FDC=true,X86_PLATFORM_DEVICES=true,SELECT_MEMORY_MODEL=true,BTRFS_FS=true,X86_DS=true,FIREWIRE=true,GENERIC_FIND_FIRST_BIT=true,PDC_CONSOLE=true,INFINIBAND=true,HT_IRQ=true,SECURITY_TOMOYO=true,HZ_300_alt=true,TWL4030_CORE=true,MCP_UCB1200=true,TRACE_IRQFLAGS_SUPPORT=true,HAVE_DMA_API_DEBUG=true,HAVE_PERF_EVENTS=true,PHYS_ADDR_T_64BIT=true,TELCLOCK=true,ASYNC_PQ=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=false,MAXSMP=true,DEBUG_PER_CPU_MAPS=true,KGDB=true,FW_LOADER=false,OF_MDIO=true,INLINE_SPIN_TRYLOCK=true,SERIAL_SUNZILOG=true,SERIAL_ICOM=true,BACKTRACE_SELF_TEST=false,SERIAL_S3C2412=true,SERIAL_SAMSUNG_UARTS=true,GENERIC_HARDIRQS_NO__DO_IRQ=false,PRINTER=true,LOCK_KERNEL=true";
+    private static final String user_requirement = "SYSFS_DEPRECATED_V2=true,INIT_ALL_POSSIBLE=true,QFMT_V1=true,SERIAL_SUNSU=true,PERF_COUNTERS=true,HAVE_ARCH_EARLY_PFN_TO_NID=true,PCCARD=true,IOMMU_DEBUG=true,RCU_TRACE=true,FTRACE_NMI_ENTER=true,PCI=true,SPLIT_PTLOCK_CPUS=true,REED_SOLOMON_ENC16=true,INLINE_WRITE_LOCK=true,EZX_PCAP=true,GENERIC_PENDING_IRQ=true,GENERIC_TIME=true,X86_ELAN=true,SERIAL_SH_SCI=true,UIO=true,SYSVIPC=true,LOCALVERSION=true,GENERIC_CMOS_UPDATE=true,STRICT_DEVMEM=true,GENERIC_ATOMIC64=true,DEBUG_PAGEALLOC=true,CHR_DEV_OSST=true,PCI_DEBUG=true,SERIAL_ATMEL=true,NLS=true,ARCH_MAY_HAVE_PC_FDC=true,X86_PLATFORM_DEVICES=true,SELECT_MEMORY_MODEL=true,BTRFS_FS=true,X86_DS=true,FIREWIRE=true,GENERIC_FIND_FIRST_BIT=true,PDC_CONSOLE=true,INFINIBAND=true,HT_IRQ=true,SECURITY_TOMOYO=true,HZ_300_alt=true,TWL4030_CORE=true,MCP_UCB1200=true,TRACE_IRQFLAGS_SUPPORT=true,HAVE_DMA_API_DEBUG=true,HAVE_PERF_EVENTS=true,PHYS_ADDR_T_64BIT=true,TELCLOCK=true,ASYNC_PQ=true,ARCH_INLINE_SPIN_UNLOCK_IRQ=false,MAXSMP=true,DEBUG_PER_CPU_MAPS=true,KGDB=true,FW_LOADER=false,OF_MDIO=true,INLINE_SPIN_TRYLOCK=true,SERIAL_SUNZILOG=true,SERIAL_ICOM=true,BACKTRACE_SELF_TEST=false,SERIAL_S3C2412=true,SERIAL_SAMSUNG_UARTS=true,GENERIC_HARDIRQS_NO__DO_IRQ=false,PRINTER=true,LOCK_KERNEL=true";
 
     @BeforeAll
     public static void setUp() throws FeatureModelParserException {
@@ -56,9 +56,9 @@ public class LinuxTest4 {
         featureModel = parser.parse(file);
 
         UserRequirementBuilder builder = new UserRequirementBuilder();
-        List<UserRequirement> userRequirement = builder.buildUserRequirement(var_value_combination);
+        List<UserRequirement> userRequirement = builder.buildUserRequirement(user_requirement);
         combination = Combination.builder()
-                .combination(var_value_combination)
+                .combination(user_requirement)
                 .userRequirements(userRequirement)
                 .build();
     }

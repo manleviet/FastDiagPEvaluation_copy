@@ -5,61 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f01c46e2-5912-4fad-a878-0cb458e1dbd4" name="Changes" comment="First commit">
-      <changelist_data name="Lê Viết Mẫn" email="manleviet@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/FastDiagP.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/kb/linux-2.6.33.3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/core/CCManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/core/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/AbstractFastDiagP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/core/CCSTATE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/core/ConsistencyCheckResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/core/ConsistencyCheckWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/core/LookupTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev4/ConsistencyCheckWorkerV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev4/LookAheadNodeV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev4/LookAheadWorkerV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev4/LookupTableV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/ConsistencyCheckResultV6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/ConsistencyCheckWorkerV6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/LookAheadWorkerV6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/LookupTableV6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/lookaheadtree/LookAheadNodeStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/Combination.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/CombinationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/UserRequirement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/CombinationBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/CombinationListBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/CombinationListWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/ICombinationBuildable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/ICombinationListBuildable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/IUserRequirementBuildable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/ScenarioBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/ScenarioCombinationBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/io/UserRequirementBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/translator/FMUserRequirementTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/core/translator/IUserRequirementTranslatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/model/FMModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV4Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV6Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/core/CCManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/core/CCManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/FastDiagPV6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/LookupTableV6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/tugraz/ist/ase/cacdr/algorithms/fastdiagp/corev6/LookupTableV6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/tugraz/ist/ase/cacdr/algorithms/linux/LinuxTest8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +59,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.1908046",
     "settings.editor.selected.configurable": "copyright.profiles"
   }
 }]]></component>
@@ -200,8 +160,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656883496623</updated>
-      <workItem from="1656883498046" duration="2250000" />
+      <workItem from="1656883498046" duration="2354000" />
+      <workItem from="1657118995623" duration="13519000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1656885836733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656885836733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -194,28 +194,30 @@ public class FastDiagPV6 extends AbstractFastDiagP {
         Set<Constraint> BwithC = Sets.union(B, C); incrementCounter(COUNTER_UNION_OPERATOR);
 
         Boolean consistent;
+        // check the existence of the consistency check for B U C
         if (!lookupTable.contains(BwithC.hashCode())) {
             log.debug("{}(isConsistent) Not found ConsistencyCheckResultV6 for [BwithC={}]", LoggerUtils.tab(), BwithC);
             incrementCounter(COUNTER_NOT_EXISTCC);
 
             int maxLevel = this.maxLevel;
             if (this.maxLevel == 1 && firstTime) {
-                maxLevel += 1;
+                maxLevel += 1; // to generate more consistency checks
                 firstTime = false;
             }
 
-            // Add to LookupTable
+            // Add to LookupTable before running the lookAhead
             ConsistencyCheckResultV6 result = new ConsistencyCheckResultV6(BwithC);
             lookupTable.put(BwithC.hashCode(), result);
 //            System.out.println("Root: " + BwithC);
 
+            // Run the lookAhead
             LookAheadWorkerV6 lookAheadWorker = new LookAheadWorkerV6(C, B, Δ, 0, maxLevel,
                     lookupTable, ccManager, checkerPool);
-            lookAheadPool.execute(lookAheadWorker);
+            lookAheadPool.execute(lookAheadWorker); // run the lookAhead in the lookAheadPool
             incrementCounter(COUNTER_LOOKAHEAD);
 
             log.debug("{}(isConsistent) Checking consistency for [BwithC={}]", LoggerUtils.tab(), BwithC);
-            consistent = checker.isConsistent(BwithC);
+            consistent = checker.isConsistent(BwithC); // run the checker in the main thread
             incrementCounter(COUNTER_CONSISTENCY_CHECKS);
 
 //            result.setConsistency(consistent, Thread.currentThread().getId());
@@ -223,11 +225,12 @@ public class FastDiagPV6 extends AbstractFastDiagP {
             incrementCounter(COUNTER_EXISTCC);
             log.debug("{}(isConsistent) Found a ConsistencyCheckResultV3 for [BwithC={}]", LoggerUtils.tab(), BwithC);
 
+            // Get the result of the consistency check from the lookupTable
             consistent = lookupTable.getConsistency(BwithC.hashCode());
 
-            if (consistent == null) {
+            if (consistent == null) { // if the result is not yet available
                 log.debug("{}(isConsistent) Checking consistency for [BwithC={}]", LoggerUtils.tab(), BwithC);
-                consistent = checker.isConsistent(BwithC);
+                consistent = checker.isConsistent(BwithC); // run the checker in the main thread
                 incrementCounter(COUNTER_CONSISTENCY_CHECKS);
             }
         }
